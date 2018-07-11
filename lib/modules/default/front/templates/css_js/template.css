@@ -1,0 +1,100 @@
+body {
+	transition: padding .4s;
+}
+.sidebar {
+	display: block;
+	position: fixed;
+	z-index: 2;
+	min-width: 250px;
+	width: 25%;
+	height: 100%;
+	padding: 15px;
+	background: #f2f2f2;
+	transition: left .4s, right .4s;
+	-webkit-transition: left .4s, right .4s;
+}
+.sidebar-overflow {
+	display: none;
+	background: #000;
+	opacity: .5;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+.sidebar-left {
+	left: -25%;
+}
+.sidebar-right {
+	right: -25%;
+}
+.sidebar-left-open {
+	padding-left: 25%;
+	overflow: hidden;
+}
+.sidebar-right-open {
+	padding-right: 25%;
+	overflow: hidden;
+}
+.sidebar-left-open .sidebar-left {
+	left: 0;
+}
+.sidebar-right-open .sidebar-right {
+	right: 0;
+}
+
+.sidebar-left-open .sidebar-overflow,
+.sidebar-right-open .sidebar-overflow
+{
+	display: block;
+}
+
+
+.btn-menu {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	padding: 5px 6px;
+	border: none;
+	background: none;
+	cursor: pointer;
+	outline: none!important;
+}
+
+.btn-menu:hover {
+	padding: 5px 8px;
+}
+.btn-menu:before {
+	content: "";
+	display: block;
+	height: 3px;
+	width: 100%;
+	background: #000;
+	transition: box-shadow .1s;
+	box-shadow: 
+		0 -8px #000,
+		0 8px #000
+}
+.btn-menu.active:before {
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+}
+.btn-menu.active:before {
+	content: "";
+	display: block;
+	height: 3px;
+	width: 100%;
+	box-shadow: none;
+}
+.btn-menu.active:after {
+	content: "";
+	display: block;
+	height: 3px;
+	width: 100%;
+	margin-top: -3px;
+	background: #000;
+	transform: rotate(315deg);
+	-webkit-transform: rotate(315deg);
+}

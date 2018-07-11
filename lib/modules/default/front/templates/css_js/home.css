@@ -1,0 +1,5 @@
+.slider .slide {
+	height: 400px;
+	width: 100%;
+	background: transparent no-repeat center center/cover scroll;
+}
